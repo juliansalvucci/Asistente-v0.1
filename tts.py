@@ -1,3 +1,4 @@
+from winsound import PlaySound
 from gtts import gTTS
 from playsound import playsound
 import speech_recognition as sr
@@ -25,8 +26,8 @@ def getAudioFromMicrophone():
          if "Google" in text:
              webbrowser.open('https://www.google.com')
 
-         if "prender" in text:
-             tts3 = gTTS("Prendiendo", lang='es')
+         if "encender" in text:
+             tts3 = gTTS("encendiendo", lang='es')
              tts3.save("audio3.mp3")
              playsound("audio3.mp3")
 
@@ -35,6 +36,7 @@ def getAudioFromMicrophone():
              board = pyfirmata2.Arduino(PORT)
 
              board.digital[13].write(1)
+             board.digital[12].write(1)
 
       except:
          ttsfail = gTTS('No te entiendo', lang='es')
