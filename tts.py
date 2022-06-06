@@ -26,10 +26,12 @@ def getAudioFromMicrophone():
          if "Google" in text:
              webbrowser.open('https://www.google.com')
 
-         if "encender" in text:
+         if "er" in text:
+             '''''
              tts3 = gTTS("encendiendo", lang='es')
              tts3.save("audio3.mp3")
              playsound("audio3.mp3")
+             '''''
 
              PORT = pyfirmata2.Arduino.AUTODETECT
 
